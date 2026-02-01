@@ -31,6 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Ensure initial state is correct if someone reloads or if script runs later
+    if (body.classList.contains('rtl')) {
+        switchLanguage('ar');
+    }
+
     function switchLanguage(lang) {
         const elements = document.querySelectorAll('[data-fr]');
         elements.forEach(el => {
